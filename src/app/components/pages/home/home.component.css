@@ -45,7 +45,10 @@ li a img{
   font-size: 1.2rem;
 }
 
-.favorite.not{
+.true{
+  color: #e72929;
+}
+.false{
   color: grey;
 }
 

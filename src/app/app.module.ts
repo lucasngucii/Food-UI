@@ -6,17 +6,23 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/partials/header/header.component';
 import {HomeComponent} from './components/pages/home/home.component';
 import {RatingModule} from "ng-starrating";
+import { StarComponent } from './shared/star/star.component';
+import {ConvertToSpacesPipe} from "./shared/star/convert-to-spaces.pipe";
+import { SearchComponent } from './components/partials/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    StarComponent,
+    ConvertToSpacesPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RatingModule,
+    /*RatingModule,*/
   ],
   providers: [],
   bootstrap: [AppComponent]
