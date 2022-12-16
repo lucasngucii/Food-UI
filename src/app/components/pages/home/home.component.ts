@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Food} from "../../../shared/models/foods/Food";
 import {FoodService} from "../../../services/foods/food.service";
-import { sample_foods } from 'src/data';
 import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-home',
@@ -18,19 +18,17 @@ export class HomeComponent implements OnInit {
         if (params.searchItem) {
           // @ts-ignore
           this.foods = this.foodService.getAllFoodByName(params.searchItem);
-
+        } else if (params.tag) {
+          this.foods = this.foodService.getAllFoodByTag(params.tag);
         } else {
           this.foods = foodService.getAll();
         }
       }
-      )
-
+    )
   }
 
   ngOnInit(): void {
   }
-  getAll(): Food[]{
-    return sample_foods;
-  }
+
 
 }

@@ -21,7 +21,7 @@ export const sample_foods: Food[] = [{
     origins: ['persia', 'middle east', 'china'],
     stars: 4.7,
     imageUrl: 'assets/food-2.jpg',
-    tags: ['SlowFood', 'Lunch'],
+    tags: [' ', 'Lunch'],
   },
   {
     id: '3',
