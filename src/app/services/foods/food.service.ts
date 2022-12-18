@@ -13,7 +13,7 @@ export class FoodService {
   getAll(): Food[] {
     return sample_foods;
   }
-  getAllTags(): Tag[]{
+  getAllTags(): Tag[] {
     return sample_tags;
   }
 
@@ -25,5 +25,7 @@ export class FoodService {
     return tag === "All" ? this.getAll() : this.getAll().filter(food => food.tags.includes(tag));
   }
 
-
+  getFoodById(id: string): Food {
+    return this.getAll().find(food => food.id === id) ?? new Food();
+  }
 }

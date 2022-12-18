@@ -1,0 +1,14 @@
+<app-header></app-header>
+<app-search></app-search>
+<section *ngIf="food">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <img
+        class="lg:w-2 w-full object-cover object-center rounded border border-gray-200"
+        src="{{food.imageUrl}}"
+        alt="{{ food.name}}"
+      />
+      <div class=""></div>
+    </div>
+  </div>
+</section>
