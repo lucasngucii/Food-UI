@@ -1,24 +1,18 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
-  styleUrls: ['./star.component.css']
+  styleUrls: ['./star.component.css'],
 })
 export class StarComponent implements OnInit {
   @Input() rating: number = 0;
   cropWidth: number = 75;
-  @Output() ratingClicked: EventEmitter<string> =
-    new EventEmitter<string>();
-
-  constructor() {
-  }
+  constructor() {}
 
   ngOnChanges(): void {
-    this.cropWidth = this.rating * 75 / 5;
+    this.cropWidth = (this.rating * 75) / 5;
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
