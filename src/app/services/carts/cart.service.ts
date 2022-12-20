@@ -21,6 +21,7 @@ export class CartService implements OnInit {
   }
   removeFromCart(id: String): void {
     this.cart.items = this.cart.items.filter((item) => item.food.id !== id);
+    this.setCartToLocalStorage();
   }
   changeQuantity(id: string, quantity: number): void {
     let cartItem = this.cart.items.find((item) => item.food.id === id);
