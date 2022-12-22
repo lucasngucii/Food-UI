@@ -11,7 +11,7 @@ import { TagComponent } from './components/partials/tag/tag.component';
 import { ProductDetailComponent } from './components/pages/product-detail/product-detail.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { RegisterComponent } from './components/pages/register/register.component';
-import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
