@@ -32,13 +32,12 @@ export class CartService implements OnInit {
     cartItem.price = quantity * cartItem.food.price;
     this.setCartToLocalStorage();
   }
-  countPrice(){
-    
-  }
+
   clearCart() {
     this.cart = new Cart();
     this.setCartToLocalStorage();
   }
+  
   getCartObservable(): Observable<Cart> {
     return this.cartSubject.asObservable();
   }
@@ -55,7 +54,7 @@ export class CartService implements OnInit {
       (prevSum, currentItem) => prevSum + currentItem.quantity,
       0
     );
-    
+
     const cartJson = JSON.stringify(this.cart);
     localStorage.setItem('cart', cartJson);
     this.cartSubject.next(this.cart);
