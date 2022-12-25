@@ -1,0 +1,107 @@
+{
+  "name": "foodapp-project",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:class": {
+      "skipTests": true
+    },
+    "@schematics/angular:component": {
+      "skipTests": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true
+    },
+    "@schematics/angular:guard": {
+      "skipTests": true
+    },
+    "@schematics/angular:interceptor": {
+      "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:resolver": {
+      "skipTests": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
+    }
+  },
+  "sourceRoot": "apps/foodapp-project/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/foodapp-project",
+        "index": "apps/foodapp-project/src/index.html",
+        "main": "apps/foodapp-project/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/foodapp-project/tsconfig.app.json",
+        "assets": [
+          "apps/foodapp-project/src/favicon.ico",
+          "apps/foodapp-project/src/assets"
+        ],
+        "styles": ["apps/foodapp-project/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "foodapp-project:build:production"
+        },
+        "development": {
+          "browserTarget": "foodapp-project:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "foodapp-project:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "tsConfig": "apps/foodapp-project/tsconfig.spec.json",
+        "assets": [
+          "apps/foodapp-project/src/favicon.ico",
+          "apps/foodapp-project/src/assets"
+        ],
+        "styles": ["apps/foodapp-project/src/styles.css"],
+        "scripts": []
+      }
+    }
+  }
+}
